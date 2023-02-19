@@ -36,5 +36,5 @@
     "opencc-js": "^1.0.5",
     "progress": "^2.0.3"
   },
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
