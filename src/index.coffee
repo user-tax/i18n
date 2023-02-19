@@ -20,7 +20,7 @@
 
 translate = retry (args...)=>
   r = await _translate ...args
-  await sleep 3e3
+  #await sleep 3e3
   r
 
 {greenBright,gray,yellowBright} = chalk
