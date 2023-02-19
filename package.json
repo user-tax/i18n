@@ -21,7 +21,7 @@
   "repository": "git@github.com:user-tax/i18n.git",
   "dependencies": {
     "@u6x/jsext": "^0.0.27",
-    "@u7/retry": "^0.0.1",
+    "@u7/retry": "^0.0.2",
     "@u7/sleep": "^0.0.3",
     "@u7/u8": "^0.0.9",
     "@u7/utf8": "^0.0.3",
