@@ -212,7 +212,7 @@ translateDir = (dir, from_to)=>
       ) or name == 'i18n'
         await translateDir dir, from_to
 
-  console.log yellowBright "\n❯ #{dir} translated"
+    console.log yellowBright "\n❯ #{dir} translated"
 
   return
 
