@@ -211,8 +211,7 @@ translateDir = (dir, from_to)=>
         name.endsWith('.i18n') and name.length > 5
       ) or name == 'i18n'
         await translateDir dir, from_to
-
-    console.log yellowBright "\n❯ #{dir} translated"
+        console.log yellowBright "\n❯ #{dir} translated"
 
   return
 
