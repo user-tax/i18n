@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-> ../index
+> ../index.js
 
 await index process.cwd()
 
