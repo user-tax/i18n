@@ -27,7 +27,7 @@ translate = retry (args...)=>
 
 + BAR
 
-LANG_LI = [...Object.keys langLi]
+export LANG_LI = [...Object.keys langLi]
 
 {http_proxy} = process.env
 
@@ -142,7 +142,7 @@ zhTw = (dir)=>
 
 CACHED_YML = new Map
 
-translateDir = (dir, from_to, default_lang)=>
+translateDir = (dir, from_to, default_lang, hook)=>
   yml = Yml(dir)
   default_yml = yml[default_lang]
 
@@ -174,10 +174,11 @@ translateDir = (dir, from_to, default_lang)=>
 
   zhTw(dir)
   CACHED_YML.clear()
+  hook dir, default_lang
   return
 
 
-< default main = (now)=>
+< default main = (now, hook= (dir, default_lang)=>)=>
 
   from_to = new Map
 
@@ -211,7 +212,7 @@ translateDir = (dir, from_to, default_lang)=>
         name.endsWith('.i18n') and name.length > 5
       ) or name == 'i18n'
         console.log yellowBright "\n❯ #{dir} translate begin"
-        await translateDir dir, from_to, default_lang
+        await translateDir dir, from_to, default_lang, hook
         console.log gray "\n❯ #{dir} translated"
 
   return
