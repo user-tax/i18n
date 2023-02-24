@@ -173,6 +173,7 @@ translateDir = (dir, from_to, default_lang)=>
     await translateFromTo dir,data,from_lang,to
 
   zhTw(dir)
+  CACHED_YML.clear()
   return
 
 
