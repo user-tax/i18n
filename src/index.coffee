@@ -173,7 +173,7 @@ translateDir = (dir, from_to, default_lang, hook)=>
 
   zhTw(dir)
   CACHED_YML.clear()
-  hook dir, default_lang
+  await hook dir, default_lang
   return
 
 
