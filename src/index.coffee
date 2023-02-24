@@ -142,9 +142,7 @@ zhTw = (dir)=>
 
 CACHED_YML = new Map
 
-translateDir = (dir, from_to)=>
-  default_lang = from_to.get()
-  from_to.delete()
+translateDir = (dir, from_to, default_lang)=>
   yml = Yml(dir)
   default_yml = yml[default_lang]
 
@@ -197,7 +195,8 @@ translateDir = (dir, from_to)=>
       return
     now = dir
 
-  lang_yml = from_to.get()+'.yml'
+  default_lang = from_to.get()
+  from_to.delete()
 
   for await fp from walk(
     now
@@ -206,12 +205,13 @@ translateDir = (dir, from_to)=>
   )
     dir = dirname(fp)
     name = basename(dir)
-    if fp[dir.length+1..] == lang_yml
+    if fp[dir.length+1..] == default_lang+'.yml'
       if (
         name.endsWith('.i18n') and name.length > 5
       ) or name == 'i18n'
-        await translateDir dir, from_to
-        console.log yellowBright "\n❯ #{dir} translated"
+        console.log yellowBright "\n❯ #{dir} translate begin"
+        await translateDir dir, from_to, default_lang
+        console.log gray "\n❯ #{dir} translated"
 
   return
 
