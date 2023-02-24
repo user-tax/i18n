@@ -112,9 +112,8 @@ translateFromTo = (dir, dict, from_lang, to)=>
   key_set = new Set Object.keys out
   val_set = new Set Object.values dict
 
-  BAR.interrupt(
-    greenBright(from_lang+' → '+to)+'\n'
-  )
+  lang_from_to = greenBright(from_lang+' → '+to)
+
   for [k,v] from Object.entries dict
     BAR.tick()
     key_set.delete k
@@ -124,7 +123,7 @@ translateFromTo = (dir, dict, from_lang, to)=>
       if is_ed
         continue
     out[k] = tv = await tran v
-    BAR.interrupt('  '+v + '\n  ' + tv + '\n')
+    BAR.interrupt(lang_from_to + '  ' + v + ' → ' + tv + '\n')
   for i from key_set
     delete out[i]
   yml[to] = out
