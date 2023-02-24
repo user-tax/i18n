@@ -4,7 +4,7 @@
   @u7/write
   @u7/utf8 > utf8e
   @u7/u8 > u8merge
-  @u7/yml/Yml
+  @u7/yml/Yml.js
   fs > existsSync
   path > join dirname basename resolve
   ./LANG_LI.js
