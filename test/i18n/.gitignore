@@ -1,0 +1,5 @@
+*.yml
+!en.yml
+!zh.yml
+!.i18n/**/*
+.i18n/ed/*
