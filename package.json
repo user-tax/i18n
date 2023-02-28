@@ -40,7 +40,8 @@
     "chalk": "^5.2.0",
     "http-proxy-agent": "^5.0.0",
     "opencc-js": "^1.0.5",
-    "progress": "^2.0.3"
+    "progress": "^2.0.3",
+    "radix-64": "^1.0.4"
   },
   "overrides": {},
   "version": "0.0.29"

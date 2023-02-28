@@ -24,6 +24,7 @@ specifiers:
   http-proxy-agent: ^5.0.0
   opencc-js: ^1.0.5
   progress: ^2.0.3
+  radix-64: ^1.0.4
 
 dependencies:
   '@u6x/jsext': 0.0.27
@@ -46,6 +47,7 @@ dependencies:
   http-proxy-agent: 5.0.0
   opencc-js: 1.0.5
   progress: 2.0.3
+  radix-64: 1.0.4
 
 devDependencies:
   '@u7/node-loader': 0.0.49
@@ -357,6 +359,10 @@ packages:
   /progress/2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
+    dev: false
+
+  /radix-64/1.0.4:
+    resolution: {integrity: sha512-447m6sLQW4YujrRRSGi1S3CgRwovxuy3cPstNhb1X/J/h8BivPDWVFcizhwzYWrVM578lvEeiFXisZX0sRC7uA==}
     dev: false
 
   /require-directory/2.1.1:

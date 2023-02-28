@@ -8,9 +8,12 @@
   @u7/hashid > HashId
   @u7/u8 > u8merge
   @u7/yml/Yml.js
+  radix-64:radix64
   fs > existsSync readFileSync
   path > join dirname basename resolve
   ./LANG_LI.js
+
+{encodeInt} = radix64()
 
 outFp = (dir,name)=>
   join dir, name
@@ -143,6 +146,6 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
   )
   write(
     outJs js_dir, 'ver'
-    'export default '+id
+    "export default '#{encodeInt id}'"
   )
   return
