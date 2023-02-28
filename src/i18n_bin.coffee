@@ -91,9 +91,9 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     write(
       onMount
       """\
-      import * as code from './code.js'
+      import posId from './posId.js'
       import i18n from "../../i18n.js"
-      export default i18n.#{pkg}(code)
+      export default i18n.#{pkg}(posId)
       """
     )
 
