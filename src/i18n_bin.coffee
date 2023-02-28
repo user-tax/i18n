@@ -1,13 +1,19 @@
 > @u7/read
   @u7/snake
   @u7/uridir
+  @u7/zipint > zip
   @u7/write
+  @u7/blake3 > Blake3
   @u7/utf8 > utf8e
+  @u7/hashid > HashId
   @u7/u8 > u8merge
   @u7/yml/Yml.js
-  fs > existsSync
+  fs > existsSync readFileSync
   path > join dirname basename resolve
   ./LANG_LI.js
+
+outFp = (dir,name)=>
+  join dir, name
 
 outJs = (dir, name)=>
   join dir, name+'.js'
@@ -25,7 +31,6 @@ code_js = (dir, js_dir, lang)=>
   out = []
 
   k_code = []
-
   for [key,v] from Object.entries lang
     k = snake(key).toLocaleUpperCase()
     i = code[k]
@@ -58,7 +63,6 @@ push = (li, n, pre)=>
   return
 
 export default (dir, js_dir, bin_dir, default_lang='en')=>
-
   yml = Yml(dir)
   lang = yml[default_lang]
 
@@ -80,10 +84,13 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       pre_push_id = id
     pre_id = id
 
+  pos_id_li = pos_li.concat(id_li)
   write(
     outJs(js_dir, 'posId')
-    'export default '+JSON.stringify(pos_li.concat(id_li))
+    'export default '+JSON.stringify(pos_id_li)
   )
+  blake3 = new Blake3
+  blake3.update zip pos_id_li
 
   onMount = outJs js_dir, 'onMount'
   pkg = basename(dirname dir)
@@ -105,9 +112,33 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
         utf8e(d[key])
       )
       t.push new Uint8Array(1)
+    bin = u8merge(...t)[..-2]
     write(
       join bin_dir, lang
-      u8merge(...t)[..-2]
+      bin
     )
+
+
+    blake3.update bin
+
+  hash = blake3.finalize()
+
+  fp = outFp js_dir, '.hash'
+  if existsSync fp
+    hashid = HashId.load readFileSync fp
+    id = hashid.get hash
+    if undefined == id
+      id = hashid.maxId()+1
+  else
+    hashid = new HashId
+    id = 0
+
+  console.log 'ver',id
+
+  hashid.set hash, id
+  write(
+    fp
+    hashid.dump()
+  )
 
   return

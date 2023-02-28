@@ -2,6 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@u6x/jsext': ^0.0.27
+  '@u7/blake3': ^0.0.2
+  '@u7/hashid': ^0.0.2
   '@u7/node-loader': ^0.0.49
   '@u7/read': ^0.0.6
   '@u7/retry': ^0.0.2
@@ -15,6 +17,7 @@ specifiers:
   '@u7/write': ^0.0.9
   '@u7/xxhash3-wasm': ^0.0.15
   '@u7/yml': ^0.0.5
+  '@u7/zipint': ^0.0.2
   '@vitalets/google-translate-api': ^9.1.0
   chalk: ^5.2.0
   coffee_plus: ^0.0.55
@@ -24,6 +27,8 @@ specifiers:
 
 dependencies:
   '@u6x/jsext': 0.0.27
+  '@u7/blake3': 0.0.2
+  '@u7/hashid': 0.0.2
   '@u7/read': 0.0.6
   '@u7/retry': 0.0.2
   '@u7/sleep': 0.0.3
@@ -35,6 +40,7 @@ dependencies:
   '@u7/write': 0.0.9
   '@u7/xxhash3-wasm': 0.0.15
   '@u7/yml': 0.0.5
+  '@u7/zipint': 0.0.2
   '@vitalets/google-translate-api': 9.1.0
   chalk: 5.2.0
   http-proxy-agent: 5.0.0
@@ -60,6 +66,10 @@ packages:
   /@u6x/jsext/0.0.27:
     resolution: {integrity: sha512-JWYU9TgVNp6Te8kP40LezAL6/kOVHsUtwaWj036hw1mLa5T80F8Ntrnnc8yG+2gEAq2VoY2lBLsj/7vMFJgXLw==}
 
+  /@u7/blake3/0.0.2:
+    resolution: {integrity: sha512-DK1ww2jWwImgHuSZR8tqBCjN0xxx+F39eqnDy1qyONIYyusri9feIkryXIWZqdbMFwASr82OrH58qdTYmkYp7g==}
+    dev: false
+
   /@u7/caller_line/0.0.3:
     resolution: {integrity: sha512-fEtYr+FVKfnzDbiCboPwLOIwUKEqflo30Wgt49ZqnwhxzW9VXdKoAQBB2xqPBTKgJYlYbfoJw8umfzwG6R/GaQ==}
     dev: false
@@ -67,6 +77,10 @@ packages:
   /@u7/camel/0.0.28:
     resolution: {integrity: sha512-1Sh7T5na9XpnNOs9ecKEsBRCQ+Sn+FVM0TEF12edxb/eOY460H+z2ciphkDUhBE9MwSXxt03LoyQMwYDGIzv4w==}
     dev: true
+
+  /@u7/hashid/0.0.2:
+    resolution: {integrity: sha512-mGwEf1O9s4oEBI5qXclFwdB34TcAKi+FFOCSIAyyvfXbZkzVfe/t5qNEfe1NpqMt0TYJAPZ8phYazercIVva8w==}
+    dev: false
 
   /@u7/node-loader/0.0.49:
     resolution: {integrity: sha512-DKQGd5M8QHm42P1gje0QLbqnF5lJkcCf+M0xOUNjiilHlCcz67KQbWEkSTTLqaXvt05EmlMjxNLFVqIkw2A7CQ==}
@@ -136,6 +150,12 @@ packages:
       '@u7/read': 0.0.6
       '@u7/write': 0.0.8
       js-yaml: 4.1.0
+    dev: false
+
+  /@u7/zipint/0.0.2:
+    resolution: {integrity: sha512-hUPU/5SekHYg1Z2OxJft82d6RINiuO+JAfakFInqiUMEWlQLfXPlR2SyV8jKkMdX7GsznLpL+WasteziGOnbTA==}
+    dependencies:
+      fastintcompression: 0.0.4
     dev: false
 
   /@vitalets/google-translate-api/9.1.0:
@@ -241,6 +261,10 @@ packages:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
     dev: true
+
+  /fastintcompression/0.0.4:
+    resolution: {integrity: sha512-sRtejNHcWjJl0Fr+gsbybbgOKKj0sQYvv7rA787EbeFu1fMpmzjHuBW8fLBImSZeqDuR++TZU2n60mRrpAUR9g==}
+    dev: false
 
   /fs-extra/11.1.0:
     resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
