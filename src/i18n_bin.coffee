@@ -100,7 +100,8 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       """\
       import posId from './posId.js'
       import i18n from "../../i18n.js"
-      export default i18n.#{pkg}(posId)
+      import ver from "./ver.js"
+      export default i18n.#{pkg}(ver, posId)
       """
     )
 
@@ -140,5 +141,8 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     fp
     hashid.dump()
   )
-
+  write(
+    outJs js_dir, 'ver'
+    'export default '+id
+  )
   return
