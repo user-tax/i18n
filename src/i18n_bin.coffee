@@ -90,7 +90,11 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
   if not existsSync onMount
     write(
       onMount
-      'import i18n from "../../i18n.js"\nexport default i18n.'+pkg
+      """\
+      import * as code from './code.js'
+      import i18n from "../../i18n.js"
+      export default i18n.#{pkg}(code)
+      """
     )
 
   for lang from LANG_LI
@@ -103,7 +107,7 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       t.push new Uint8Array(1)
     write(
       join bin_dir, lang
-      u8merge ...t
+      u8merge(...t)[..-2]
     )
 
   return
