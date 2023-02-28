@@ -1,19 +1,19 @@
 > @u7/read
   @u7/snake
   @u7/uridir
-  @u7/zipint > zip
   @u7/write
-  @u7/blake3 > Blake3
+  # @u7/zipint > zip
+  # @u7/blake3 > Blake3
+  # @u7/hashid > HashId
+  # radix-64:radix64
   @u7/utf8 > utf8e
-  @u7/hashid > HashId
   @u7/u8 > u8merge
   @u7/yml/Yml.js
-  radix-64:radix64
   fs > existsSync readFileSync
   path > join dirname basename resolve
   ./LANG_LI.js
 
-{encodeInt} = radix64()
+# {encodeInt} = radix64()
 
 outFp = (dir,name)=>
   join dir, name
@@ -92,8 +92,8 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     outJs(js_dir, 'posId')
     'export default '+JSON.stringify(pos_id_li)
   )
-  blake3 = new Blake3
-  blake3.update zip pos_id_li
+  #blake3 = new Blake3
+  #blake3.update zip pos_id_li
 
   onMount = outJs js_dir, 'onMount'
   pkg = basename(dirname dir)
@@ -123,29 +123,28 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     )
 
 
-    blake3.update bin
+    # blake3.update bin
 
-  hash = blake3.finalize()
+  #hash = blake3.finalize()
 
-  fp = outFp js_dir, '.hash'
-  if existsSync fp
-    hashid = HashId.load readFileSync fp
-    id = hashid.get hash
-    if undefined == id
-      id = hashid.maxId()+1
-  else
-    hashid = new HashId
-    id = 0
+  #fp = outFp js_dir, '.hash'
+  #if existsSync fp
+  #  hashid = HashId.load readFileSync fp
+  #  id = hashid.get hash
+  #  if undefined == id
+  #    id = hashid.maxId()+1
+  #else
+  #  hashid = new HashId
+  #  id = 0
 
-  console.log 'ver',id
+  #console.log 'ver',id
 
-  hashid.set hash, id
-  write(
-    fp
-    hashid.dump()
-  )
-  write(
-    outJs js_dir, 'ver'
-    "export default '#{encodeInt id}'"
-  )
+  #hashid.set hash, id
+  #write(
+  #  fp
+  #  hashid.dump()
+  #)
+  ver = outJs js_dir, 'ver'
+  if not existsSync ver
+    write ver, "export default '-'"
   return
