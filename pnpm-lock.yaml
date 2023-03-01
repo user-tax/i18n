@@ -41,12 +41,12 @@ dependencies:
   http-proxy-agent: 5.0.0
   opencc-js: 1.0.5
   progress: 2.0.3
+  radix-64: 1.0.4
 
 devDependencies:
   '@u7/node-loader': 0.0.49
   '@u7/uridir': 0.0.2
   coffee_plus: 0.0.55
-  radix-64: 1.0.4
 
 packages:
 
@@ -339,7 +339,7 @@ packages:
 
   /radix-64/1.0.4:
     resolution: {integrity: sha512-447m6sLQW4YujrRRSGi1S3CgRwovxuy3cPstNhb1X/J/h8BivPDWVFcizhwzYWrVM578lvEeiFXisZX0sRC7uA==}
-    dev: true
+    dev: false
 
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
