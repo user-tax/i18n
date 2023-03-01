@@ -94,14 +94,15 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
 
   var_js = outJs(js_dir, 'var')
   if existsSync var_js
-    {ver} = await import(var_js)
+    {ver} = await import(resolve var_js)
   else
     ver = '-'
 
   write(
+    var_js
     """\
-    export const posId = #{JSON.stringify(pos_id_li)}
     export const ver = '#{ver}' // #{decodeToInt ver}
+    export const posId = #{JSON.stringify(pos_id_li)}
     """
   )
 
@@ -111,9 +112,8 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     write(
       onMount
       """\
-      import posId from './posId.js'
-      import i18n from "../../i18n.js"
       import {ver,posId} from "./var.js"
+      import i18n from "../../i18n.js"
       export default i18n.#{pkg}(ver, posId)
       """
     )

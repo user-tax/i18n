@@ -5,7 +5,8 @@
   "devDependencies": {
     "@u7/node-loader": "^0.0.49",
     "@u7/uridir": "^0.0.2",
-    "coffee_plus": "^0.0.55"
+    "coffee_plus": "^0.0.55",
+    "radix-64": "^1.0.4"
   },
   "author": "i@user.tax",
   "exports": {
