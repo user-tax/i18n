@@ -113,7 +113,7 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       onMount
       """\
       import {ver,posId} from "./var.js"
-      import i18n from "../../i18n.js"
+      import i18n from "../_/i18n.js"
       export default i18n.#{pkg}(ver, posId)
       """
     )
