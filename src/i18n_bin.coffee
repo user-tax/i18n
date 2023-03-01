@@ -9,11 +9,14 @@
   @u7/utf8 > utf8e
   @u7/u8 > u8merge
   @u7/yml/Yml.js
+  radix-64:Radia64
   fs > existsSync readFileSync
   path > join dirname basename resolve
   ./LANG_LI.js
 
 # {encodeInt} = radix64()
+
+{decodeToInt} = Radia64()
 
 outFp = (dir,name)=>
   join dir, name
@@ -88,12 +91,19 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     pre_id = id
 
   pos_id_li = pos_li.concat(id_li)
+
+  var_js = outJs(js_dir, 'var')
+  if existsSync var_js
+    {ver} = await import(var_js)
+  else
+    ver = '-'
+
   write(
-    outJs(js_dir, 'posId')
-    'export default '+JSON.stringify(pos_id_li)
+    """\
+    export const posId = #{JSON.stringify(pos_id_li)}
+    export const ver = '#{ver}' // #{decodeToInt ver}
+    """
   )
-  #blake3 = new Blake3
-  #blake3.update zip pos_id_li
 
   onMount = outJs js_dir, 'onMount'
   pkg = basename(dirname dir)
@@ -103,7 +113,7 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       """\
       import posId from './posId.js'
       import i18n from "../../i18n.js"
-      import ver from "./ver.js"
+      import {ver,posId} from "./var.js"
       export default i18n.#{pkg}(ver, posId)
       """
     )
@@ -122,29 +132,4 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       bin
     )
 
-
-    # blake3.update bin
-
-  #hash = blake3.finalize()
-
-  #fp = outFp js_dir, '.hash'
-  #if existsSync fp
-  #  hashid = HashId.load readFileSync fp
-  #  id = hashid.get hash
-  #  if undefined == id
-  #    id = hashid.maxId()+1
-  #else
-  #  hashid = new HashId
-  #  id = 0
-
-  #console.log 'ver',id
-
-  #hashid.set hash, id
-  #write(
-  #  fp
-  #  hashid.dump()
-  #)
-  ver = outJs js_dir, 'ver'
-  if not existsSync ver
-    write ver, "export default '-'"
   return
