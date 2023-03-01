@@ -16,6 +16,9 @@
 
 # {encodeInt} = radix64()
 
+cmp = (a,b)=>
+  a[1] - b[1]
+
 {decodeToInt} = Radia64()
 
 outFp = (dir,name)=>
@@ -51,8 +54,8 @@ code_js = (dir, js_dir, lang)=>
       i
     ]
 
-  out.sort (a,b)=>
-    a[1] - b[1]
+  out.sort cmp
+  k_code.sort cmp
 
   for [k,v],pos in out
     out[pos] = "#{k}=#{v}"
