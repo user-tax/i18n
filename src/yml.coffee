@@ -134,7 +134,7 @@ zhTw = (dir)=>
 
 CACHED_YML = new Map
 
-< translateYmlDir = (dir, from_to, default_lang, hook)=>
+< translateYmlDir = (dir, from_to, default_lang)=>
   yml = Yml(dir)
   default_yml = yml[default_lang]
 
@@ -166,6 +166,5 @@ CACHED_YML = new Map
 
   zhTw(dir)
   CACHED_YML.clear()
-  await hook dir, default_lang
   return
 

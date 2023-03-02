@@ -13,7 +13,11 @@
 {gray,yellowBright} = chalk
 
 < default main = (
-  now, hook=(dir, default_lang)=>
+  now
+  hook={
+    yml:(dir, default_lang)=>
+    md:(dir, to, fp)=>
+  }
 )=>
 
   from_to = new Map
@@ -61,7 +65,8 @@
     if ~ pos
       if fp[dir.length+1..] == default_lang+'.yml'
         console.log yellowBright "\n❯ #{dir} translate begin"
-        await translateYmlDir dir, from_to, default_lang, hook
+        await translateYmlDir dir, from_to, default_lang
+        await hook.yml dir, default_lang
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
         mdfp = rfp[pos+6..]
@@ -69,15 +74,20 @@
         if ~ p
           lang = mdfp[..p-1]
           workdir = now+rfp[..pos+5]
+
+          tran = (i)=>
+            await translateMd workdir, mdfp[p..], lang, i
+            hook.md workdir, lang, i
+            return
           if lang == default_lang
             for i from LANG_LI
               if not to_lang.has i
-                await translateMd workdir, mdfp[p..], lang, i
+                await tran(i)
           else
             li = to_from.get lang
             if li
               for i from li
-                await translateMd workdir, mdfp[p..], lang, i
+                await tran(i)
 
           # console.log lang, workdir, mdfp[p..]
           # console.log from_to
