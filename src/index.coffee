@@ -203,11 +203,8 @@ translateDir = (dir, from_to, default_lang, hook)=>
       ['node_modules','.git'].includes basename d
   )
     dir = dirname(fp)
-    name = basename(dir)
     if fp[dir.length+1..] == default_lang+'.yml'
-      if (
-        name.endsWith('.i18n') and name.length > 5
-      ) or name == 'i18n'
+      if fp.includes('/i18n/') or fp.includes('.i18n/')
         console.log yellowBright "\n❯ #{dir} translate begin"
         await translateDir dir, from_to, default_lang, hook
         console.log gray "\n❯ #{dir} translated"
