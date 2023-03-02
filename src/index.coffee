@@ -70,10 +70,10 @@
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
         mdfp = rfp[pos+6..]
-        p = mdfp.indexOf('/')
+        p = mdfp.lastIndexOf('/')
         if ~ p
-          lang = mdfp[..p-1]
-          workdir = now+rfp[..pos+5]
+          lang = basename mdfp.slice(0,p-1)
+          workdir = now+rfp.slice(0,pos+5)
 
           tran = (i)=>
             await translateMd workdir, mdfp[p..], lang, i
