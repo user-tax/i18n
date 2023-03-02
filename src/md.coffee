@@ -4,9 +4,9 @@
   ./LANG_LI.js
   ./tran.js > tranHtml
 
-< translateMd = (dir, fp, src, to)=>
+< translateMd = (root,dir,file,src,to)=>
   console.log {
-    dir, fp, src, to
+    root,dir,file,src,to
   }
   return
 

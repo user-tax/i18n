@@ -16,7 +16,7 @@
   now
   hook={
     yml:(dir, default_lang)=>
-    md:(dir, to, fp)=>
+    md:(root, workdir, file, lang, to)=>
   }
 )=>
 
@@ -69,26 +69,27 @@
         await hook.yml dir, default_lang
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
-        mdfp = rfp[pos+6..]
-        p = mdfp.lastIndexOf('/')
-        if ~ p
-          rfp = dirname(rfp)
-          lang = basename rfp
-          workdir = now+dirname(rfp)
+        pos += 6
+        root = now + rfp.slice(0,pos)
+        file = basename(rfp)
+        lang = basename(dirname(rfp))
+        workdir = rfp.slice(pos,rfp.length-lang.length-file.length-1)
 
-          tran = (i)=>
-            await translateMd workdir, mdfp[p..], lang, i
-            hook.md workdir, lang, i
-            return
-          if lang == default_lang
-            for i from LANG_LI
-              if not to_lang.has i
-                await tran(i)
-          else
-            li = to_from.get lang
-            if li
-              for i from li
-                await tran(i)
+        tran = (to)=>
+          args = [root, workdir, file, lang, to]
+          await translateMd ...args
+          hook.md ...args
+          return
+
+        if lang == default_lang
+          for i from LANG_LI
+            if not to_lang.has i
+              await tran(i)
+        else
+          li = to_from.get lang
+          if li
+            for i from li
+              await tran(i)
 
   return
 
