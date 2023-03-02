@@ -72,8 +72,9 @@
         mdfp = rfp[pos+6..]
         p = mdfp.lastIndexOf('/')
         if ~ p
-          lang = basename mdfp.slice(0,p-1)
-          workdir = now+rfp.slice(0,pos+5)
+          rfp = dirname(rfp)
+          lang = basename rfp
+          workdir = now+dirname(rfp)
 
           tran = (i)=>
             await translateMd workdir, mdfp[p..], lang, i
@@ -89,7 +90,5 @@
               for i from li
                 await tran(i)
 
-          # console.log lang, workdir, mdfp[p..]
-          # console.log from_to
   return
 
