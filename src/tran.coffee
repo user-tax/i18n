@@ -66,7 +66,7 @@ export tranHtml = tran.bind tran,API + '&format=html'
 export tranText = tran.bind tran,API
 
 if process.argv[1] == decodeURI (new URL(import.meta.url)).pathname
-  li = ['<p><strong>Bok kaj ima? </strong><meta god>']
+  li = ['<p><strong>Bok kaj ima? </strong><p Ready><p Good><p Left><p Center>']
 
   for t from [tranText,tranHtml]
     for await i from t(
