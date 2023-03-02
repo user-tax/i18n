@@ -1,0 +1,45 @@
+{
+  "name": "@user.tax/i18n",
+  "type": "module",
+  "license": "Apache‑2.0",
+  "devDependencies": {
+    "@u7/node-loader": "^0.0.49",
+    "@u7/uridir": "^0.0.2",
+    "coffee_plus": "^0.0.55"
+  },
+  "author": "i@user.tax",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "lib/*"
+  ],
+  "bin": {
+    "i18n": "./lib/bin/i18n.js",
+    "i18n_bin": "./lib/bin/i18n_bin.js"
+  },
+  "repository": "git@github.com:user-tax/i18n.git",
+  "dependencies": {
+    "@u6x/jsext": "^0.0.27",
+    "@u7/read": "^0.0.6",
+    "@u7/req": "^0.0.5",
+    "@u7/sleep": "^0.0.3",
+    "@u7/snake": "^0.0.16",
+    "@u7/u8": "^0.0.9",
+    "@u7/utf8": "^0.0.3",
+    "@u7/walk": "^0.0.10",
+    "@u7/wasm-set": "^0.0.9",
+    "@u7/write": "^0.0.9",
+    "@u7/xxhash3-wasm": "^0.0.15",
+    "@u7/yml": "^0.0.5",
+    "chalk": "^5.2.0",
+    "http-proxy-agent": "^5.0.0",
+    "node-fetch": "^3.3.0",
+    "opencc-js": "^1.0.5",
+    "progress": "^2.0.3",
+    "radix-64": "^1.0.4"
+  },
+  "overrides": {},
+  "version": "0.0.37"
+}
