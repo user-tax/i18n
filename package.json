@@ -34,12 +34,14 @@
     "@u7/xxhash3-wasm": "^0.0.15",
     "@u7/yml": "^0.0.5",
     "chalk": "^5.2.0",
+    "cmark-gfm": "^0.9.0",
     "get_default": "^0.0.4",
     "http-proxy-agent": "^5.0.0",
     "node-fetch": "^3.3.0",
     "opencc-js": "^1.0.5",
     "progress": "^2.0.3",
-    "radix-64": "^1.0.4"
+    "radix-64": "^1.0.4",
+    "turndown": "^7.1.1"
   },
   "overrides": {},
   "version": "0.0.42"

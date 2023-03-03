@@ -2,10 +2,6 @@
   @u7/snake
   @u7/uridir
   @u7/write
-  # @u7/zipint > zip
-  # @u7/blake3 > Blake3
-  # @u7/hashid > HashId
-  # radix-64:radix64
   @u7/utf8 > utf8e
   @u7/u8 > u8merge
   @u7/yml/Yml.js
@@ -126,7 +122,13 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
     d = yml[lang]
     for [key] in li
       t.push(
-        utf8e(d[key])
+        utf8e(
+          d[key].replace(
+            /<br\s+([^\/>])+>/g
+            (_,s)=>
+              '${'+s+'}'
+          )
+        )
       )
       t.push new Uint8Array(1)
     bin = u8merge(...t)[..-2]
