@@ -1,7 +1,7 @@
-[1] .<br host>] <br action> código verificación rehegua: <br code>
+[1] .<br host>]<br action>código verificación rehegua:<br code>
 
-[<br host>](https://<br host>) <br action> código verificación rehegua: <br code>.
+[<br host>](https://<br host>)<br action>código verificación rehegua:<br code>.
 
-Ko código de verificación ovenséta peteî aravo rire.
+Ko código de verificación ovenséta peteî aravópe.
 
-Nderejeruréiramo <br action>, emboyke ko kuatiañe’ẽ.
+Nderepresentáiramo solicitud, emboyke ko correo electrónico.

@@ -138,7 +138,7 @@ zhTw = (dir)=>
 
 CACHED_YML = new Map
 
-< translateYmlDir = (dir, from_to, default_lang)=>
+< translateYmlDir = (dir, from_to, to_from, default_lang)=>
   yml = Yml(dir)
   default_yml = yml[default_lang]
 
@@ -150,9 +150,14 @@ CACHED_YML = new Map
       incomplete: gray '─'
     }
   )
+
+  src = to_from.get(default_lang)
+  if src
+    await translateFromTo dir,  yml[src], src, default_lang
+
   # 先默认 -> 所有，然后翻译特定语言
   for to from LANG_LI
-    if [default_lang,'zh-TW'].includes(to) or CACHED_YML.has to
+    if [default_lang,'zh-TW',src].includes(to) or CACHED_YML.has to
       continue
 
     from_lang = from_to.get(to)

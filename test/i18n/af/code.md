@@ -1,7 +1,7 @@
-[<br host>] <br action> verifikasie kode: <br code>
+[<br host>]<br action>verifikasie kode:<br code>
 
-[<br host>](https://<br host>) <br action> verifikasie kode: <br code>.
+[<br host>](https://<br host>)<br action>verifikasie kode:<br code>.
 
-Hierdie verifikasiekode sal na een uur verval.
+Hierdie verifikasiekode sal oor een uur verval.
 
-As jy nie aansoek gedoen het vir <br action>, ignoreer asseblief hierdie e-pos.
+As jy nie aansoek gedoen het nie, ignoreer asseblief hierdie e-pos.

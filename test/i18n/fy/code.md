@@ -1,7 +1,7 @@
-[<br host>] <br action> ferifikaasjekoade: <br code>
+[<br host>]<br action>ferifikaasjekoade:<br code>
 
-[<br host>](https://<br host>) <br action> ferifikaasjekoade: <br code>.
+[<br host>](https://<br host>)<br action>ferifikaasjekoade:<br code>.
 
-Dizze ferifikaasjekoade sil nei ien oere ferrinne.
+Dizze ferifikaasjekoade sil oer ien oere ferrinne.
 
-As jo ​​net oanfrege foar <br action>, negearje dizze e-post asjebleaft.
+As jo ​​​​net oanfrege hawwe, negearje dizze e-post asjebleaft.

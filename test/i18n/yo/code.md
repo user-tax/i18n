@@ -1,7 +1,7 @@
-[<br host>] <br action> kodu afimo: <br code>
+[<br host>]<br action>kodu afimo:<br code>
 
-[<br host>](https://<br host>) <br action> kodu afimo: <br code>.
+[<br host>](https://<br host>)<br action>kodu afimo:<br code>.
 
-Koodu ijẹrisi yii yoo pari lẹhin wakati kan.
+Koodu ijẹrisi yii yoo pari ni wakati kan.
 
-Ti o ko ba bere fun <br action>, Jọwọ foju imeeli yii.
+Ti o ko ba ti lo, jọwọ foju imeeli yii.

@@ -1,7 +1,7 @@
-[<br host>] <br action> kodeu vérifikasi: <br code>
+[<br host>]<br action>kodeu vérifikasi:<br code>
 
-[<br host>](https://<br host>) <br action> kodeu vérifikasi: <br code>.
+[<br host>](https://<br host>)<br action>kodeu vérifikasi:<br code>.
 
-Kode verifikasi ieu bakal kadaluwarsa saatos sajam.
+Kode verifikasi ieu bakal kadaluwarsa dina hiji jam.
 
-Upami anjeun henteu ngalamar <br action>, mangga malire email ieu.
+Upami anjeun teu acan ngalamar, mangga malire email ieu.

@@ -1,7 +1,7 @@
-[<br host>] <br action> verification code: <br code>
+[<br host>]<br action>verification code:<br code>
 
-[<br host>](https://<br host>) <br action> verification code: <br code>.
+[<br host>](https://<br host>)<br action>verification code:<br code>.
 
-This verification code will expire after one hour.
+This verification code will expire in one hour.
 
-If you didn't apply for <br action>, please ignore this email.
+If you have not applied, please ignore this email.

@@ -1,7 +1,7 @@
-[<br host>] <br action> código de verificación: <br code>
+[<br host>]<br action>código de verificación:<br code>
 
-[<br host>](https://<br host>) <br action> código de verificación: <br code>.
+[<br host>](https://<br host>)<br action>código de verificación:<br code>.
 
-Este código de verificación caducará despois dunha hora.
+Este código de verificación caducará nunha hora.
 
-Se non solicitaches <br action>, ignore este correo electrónico.
+Se non o solicitou, ignore este correo electrónico.

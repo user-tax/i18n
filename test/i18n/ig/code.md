@@ -1,7 +1,7 @@
-[<br host>] <br action> koodu nyocha: <br code>
+[<br host>]<br action>koodu nyocha:<br code>
 
-[<br host>](https://<br host>) <br action> koodu nyocha: <br code>.
+[<br host>](https://<br host>)<br action>koodu nyocha:<br code>.
 
-Koodu nkwenye a ga-ekubi ume ka otu elekere gachara.
+Koodu nkwenye a ga-ekubi ume n'otu awa.
 
-Ọ bụrụ na i tinyeghị akwụkwọ maka ya <br action>, biko leghara email a anya.
+Ọ bụrụ na i tinyebeghị akwụkwọ, biko leghara email a anya.

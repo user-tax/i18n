@@ -1,7 +1,7 @@
-[<br host>] <br action> code ya vérification: <br code>
+[<br host>]<br action>code ya vérification:<br code>
 
-[<br host>](https://<br host>) <br action> code ya vérification: <br code>.
+[<br host>](https://<br host>)<br action>code ya vérification:<br code>.
 
-Code oyo ya vérification ekosila sima ya ngonga moko.
+Code oyo ya vérification ekosila na ngonga moko.
 
-Soki osengaki te <br action>, svp bo ignorer email oyo.
+Soki osali demande te, ignorer email oyo.

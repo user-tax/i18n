@@ -1,7 +1,7 @@
-[<br host>] <br action> nambala yotsimikizira: <br code>
+[<br host>]<br action>nambala yotsimikizira:<br code>
 
-[<br host>](https://<br host>) <br action> nambala yotsimikizira: <br code>.
+[<br host>](https://<br host>)<br action>nambala yotsimikizira:<br code>.
 
-Khodi yotsimikizirayi itha pakadutsa ola limodzi.
+Khodi yotsimikizirayi itha mu ola limodzi.
 
-Ngati simunalembetse <br action>, chonde nyalanyazani imelo iyi.
+Ngati simunalembetse, chonde nyalanyazani imelo iyi.

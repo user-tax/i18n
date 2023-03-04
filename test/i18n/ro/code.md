@@ -1,7 +1,7 @@
-[<br host>] <br action> Cod de verificare: <br code>
+[<br host>]<br action>Cod de verificare:<br code>
 
-[<br host>](https://<br host>) <br action> Cod de verificare: <br code>.
+[<br host>](https://<br host>)<br action>Cod de verificare:<br code>.
 
-Acest cod de verificare va expira după o oră.
+Acest cod de verificare va expira într-o oră.
 
-Dacă nu ai aplicat <br action>, Te rog ignoră acest email.
+Dacă nu ați aplicat, vă rugăm să ignorați acest e-mail.

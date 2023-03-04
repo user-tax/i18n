@@ -1,7 +1,7 @@
-[<br host>] <br action> gqina ikhowudi: <br code>
+[<br host>]<br action>gqina ikhowudi:<br code>
 
-[<br host>](https://<br host>) <br action> gqina ikhowudi: <br code>.
+[<br host>](https://<br host>)<br action>gqina ikhowudi:<br code>.
 
-Le khowudi yokuqinisekisa izakuphelelwa emva kweyure enye.
+Le khowudi yokuqinisekisa izakuphelelwa ngeyure enye.
 
-Ukuba awuzange usifake isicelo <br action>, nceda ungayihoyi le imeyile.
+Ukuba awusifakanga isicelo, nceda ungayihoyi le imeyile.

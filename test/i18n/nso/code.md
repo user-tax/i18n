@@ -1,7 +1,7 @@
-[<br host>] <br action> khoutu ya netefatšo: . <br code>
+[<br host>]<br action>khoutu ya netefatšo: .<br code>
 
-[<br host>](https://<br host>) <br action> khoutu ya netefatšo: . <br code>.
+[<br host>](https://<br host>)<br action>khoutu ya netefatšo: .<br code>.
 
-Khoutu ye ya netefatšo e tla fela ka morago ga iri e tee.
+Khoutu ye ya netefatšo e tla fela ka iri e tee.
 
-Ge o se wa dira kgopelo ya <br action>, hle hlokomologa imeile ye.
+Ge e le gore ga se wa dira kgopelo, hle hlokomologa imeile ye.

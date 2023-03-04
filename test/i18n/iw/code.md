@@ -1,7 +1,7 @@
-[<br host>] <br action> קוד אימות: <br code>
+[<br host>]<br action>קוד אימות:<br code>
 
-[<br host>](https://<br host>) <br action> קוד אימות: <br code>.
+[<br host>](https://<br host>)<br action>קוד אימות:<br code>.
 
-קוד אימות זה יפוג לאחר שעה.
+קוד האימות הזה יפוג בעוד שעה.
 
-אם לא הגשת בקשה <br action>, אנא התעלם מאימייל זה.
+אם לא הגשת בקשה, אנא התעלם מאימייל זה.

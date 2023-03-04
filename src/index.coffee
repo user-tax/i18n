@@ -65,7 +65,7 @@
     if ~ pos
       if fp[dir.length+1..] == default_lang+'.yml'
         console.log yellowBright "\n❯ #{dir} translate begin"
-        await translateYmlDir dir, from_to, default_lang
+        await translateYmlDir dir, from_to, to_from, default_lang
         await hook.yml dir, default_lang
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
@@ -75,21 +75,29 @@
         lang = basename(dirname(rfp))
         workdir = rfp.slice(pos,rfp.length-lang.length-file.length-1)
 
-        tran = (to)=>
-          args = [root, workdir, file, lang, to]
+        tran = (src, to)=>
+          args = [root, workdir, file, src, to]
           await translateMd ...args
           hook.md ...args
           return
 
         if lang == default_lang
+          src = to_from.get(default_lang)
+          if src
+            await tran(src, default_lang)
+
           for i from LANG_LI
+            if src == i
+              continue
             if not to_lang.has i
-              await tran(i)
+              await tran(lang, i)
         else
           li = to_from.get lang
           if li
             for i from li
-              await tran(i)
+              if i == default_lang
+                continue
+              await tran(lang, i)
 
   return
 

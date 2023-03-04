@@ -1,7 +1,7 @@
-[<br host>] <br action> ověřovací kód: <br code>
+[<br host>]<br action>ověřovací kód:<br code>
 
-[<br host>](https://<br host>) <br action> ověřovací kód: <br code>.
+[<br host>](https://<br host>)<br action>ověřovací kód:<br code>.
 
-Platnost tohoto ověřovacího kódu vyprší po jedné hodině.
+Platnost tohoto ověřovacího kódu vyprší za hodinu.
 
-Pokud jste nepožádali o <br action>, prosím ignorujte tento e-mail.
+Pokud jste se nepřihlásili, ignorujte prosím tento e-mail.

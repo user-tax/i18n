@@ -1,7 +1,7 @@
-[1] .<br host>] <br action> chiqapa uñt’ayawi: 1.1. <br code>
+[1] .<br host>]<br action>chiqapa uñt’ayawi: 1.1.<br code>
 
-[<br host>](https://<br host>) <br action> chiqapa uñt’ayawi: 1.1. <br code>.
+[<br host>](https://<br host>)<br action>chiqapa uñt’ayawi: 1.1.<br code>.
 
-Aka chiqanchañ chimpuxa mä hora qhipatwa tukusxani.
+Aka código de verificación ukax mä horat tukusxaniwa.
 
-Janitï mayipkäta ukhajja <br action>, aka correo electrónico ukar jan yäqañamawa.
+Janitï mayiwayksta ukhax aka correo electrónico ukar jan yäqañamawa.

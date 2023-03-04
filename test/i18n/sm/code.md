@@ -1,7 +1,7 @@
-[<br host>] <br action> tulafono fa'amaonia: <br code>
+[<br host>]<br action>tulafono fa'amaonia:<br code>
 
-[<br host>](https://<br host>) <br action> tulafono fa'amaonia: <br code>.
+[<br host>](https://<br host>)<br action>tulafono fa'amaonia:<br code>.
 
-O lenei fa'ailoga fa'amaonia o le a muta pe a uma le tasi le itula.
+Ole fa'ailoga fa'amaonia ole a muta ile itula e tasi.
 
-Afai e te le'i talosaga mo <br action>, fa'amolemole le amana'ia lenei imeli.
+Afai e te le'i talosaga, fa'amolemole le amana'ia lenei imeli.

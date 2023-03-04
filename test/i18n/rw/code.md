@@ -1,7 +1,7 @@
-[<br host>] <br action> kode yo kugenzura: <br code>
+[<br host>]<br action>kode yo kugenzura:<br code>
 
-[<br host>](https://<br host>) <br action> kode yo kugenzura: <br code>.
+[<br host>](https://<br host>)<br action>kode yo kugenzura:<br code>.
 
-Iyi code yo kugenzura izarangira nyuma yisaha imwe.
+Iyi code yo kugenzura izarangira mu isaha imwe.
 
-Niba utabisabye <br action>, nyamuneka wirengagize iyi imeri.
+Niba utarasabye, nyamuneka wirengagize iyi imeri.

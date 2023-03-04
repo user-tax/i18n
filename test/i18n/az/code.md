@@ -1,7 +1,7 @@
-[<br host>] <br action> yoxlama kodu: <br code>
+[<br host>]<br action>yoxlama kodu:<br code>
 
-[<br host>](https://<br host>) <br action> yoxlama kodu: <br code>.
+[<br host>](https://<br host>)<br action>yoxlama kodu:<br code>.
 
-Bu doğrulama kodunun müddəti bir saat sonra bitəcək.
+Bu doğrulama kodunun müddəti bir saat ərzində bitəcək.
 
-Əgər müraciət etməmisinizsə <br action>, lütfən, bu e-poçta məhəl qoymayın.
+Əgər müraciət etməmisinizsə, lütfən, bu e-məktubu iqnor edin.

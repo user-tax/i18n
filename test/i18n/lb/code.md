@@ -1,7 +1,7 @@
-[<br host>] <br action> Sëcherheetscode: <br code>
+[<br host>]<br action>Sëcherheetscode:<br code>
 
-[<br host>](https://<br host>) <br action> Sëcherheetscode: <br code>.
+[<br host>](https://<br host>)<br action>Sëcherheetscode:<br code>.
 
-Dëse Verifizéierungscode leeft no enger Stonn of.
+Dëse Verifizéierungscode leeft an enger Stonn aus.
 
-Wann Dir hutt net gëlle fir <br action>, ignoréiert w.e.g. dës E-Mail.
+Wann Dir net ugemellt hutt, ignoréiert w.e.g. dës E-Mail.

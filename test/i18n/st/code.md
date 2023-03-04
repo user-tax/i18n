@@ -1,7 +1,7 @@
-[<br host>] <br action> nomoro ea netefatso: <br code>
+[<br host>]<br action>nomoro ea netefatso:<br code>
 
-[<br host>](https://<br host>) <br action> nomoro ea netefatso: <br code>.
+[<br host>](https://<br host>)<br action>nomoro ea netefatso:<br code>.
 
-Nomoro ena ea netefatso e tla felloa ke nako ka mor'a hora.
+Nomoro ena ea netefatso e tla felloa ke nako ka mor'a hora e le 'ngoe.
 
-Haeba u ne u sa etsa kopo bakeng sa <br action>, ka kopo hlokomoloha lengolo-tsoibila lena.
+Haeba ha o so kenye kopo, ka kopo hlokomoloha lengolo-tsoibila lena.
