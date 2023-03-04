@@ -81,11 +81,11 @@
           hook.md ...args
           return
 
-        if lang == default_lang
-          src = from_to.get(default_lang)
-          if src
-            await tran(src, default_lang)
+        src = from_to.get(default_lang)
+        if src
+          await tran(src, default_lang)
 
+        if lang == default_lang
           for i from LANG_LI
             if src == i
               continue
