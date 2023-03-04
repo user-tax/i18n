@@ -65,7 +65,7 @@
     if ~ pos
       if fp[dir.length+1..] == default_lang+'.yml'
         console.log yellowBright "\n❯ #{dir} translate begin"
-        await translateYmlDir dir, from_to, to_from, default_lang
+        await translateYmlDir dir, from_to, default_lang
         await hook.yml dir, default_lang
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
@@ -82,7 +82,7 @@
           return
 
         if lang == default_lang
-          src = to_from.get(default_lang)
+          src = from_to.get(default_lang)
           if src
             await tran(src, default_lang)
 

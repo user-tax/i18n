@@ -138,7 +138,7 @@ zhTw = (dir)=>
 
 CACHED_YML = new Map
 
-< translateYmlDir = (dir, from_to, to_from, default_lang)=>
+< translateYmlDir = (dir, from_to, default_lang)=>
   yml = Yml(dir)
   default_yml = yml[default_lang]
 
@@ -151,7 +151,7 @@ CACHED_YML = new Map
     }
   )
 
-  src = to_from.get(default_lang)
+  src = from_to.get(default_lang)
   if src
     await translateFromTo dir,  yml[src], src, default_lang
 
