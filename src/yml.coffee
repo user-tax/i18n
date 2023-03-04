@@ -164,7 +164,8 @@ CACHED_YML = new Map
     if from_lang
       data = CACHED_YML.get(from_lang)
       if not data
-        await translateFromTo dir,default_yml,default_lang,from_lang
+        if from_lang != src
+          await translateFromTo dir,default_yml,default_lang,from_lang
         data = yml[from_lang]
         CACHED_YML.set from_lang, data
     else
