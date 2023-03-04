@@ -191,7 +191,7 @@ tran = (dir, file, md, to, from_lang)=>
               cache.set i,e
 
         if change
-          console.log src,'→',out_fp,'update cache'
+          console.log from_lang,'→',out_fp,'update cache'
           write(
             cache_fp
             cache.dump()
