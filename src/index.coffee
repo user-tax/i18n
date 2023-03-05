@@ -92,7 +92,6 @@
             await tran(src, default_lang)
           traned_default.add key
 
-
         if lang == default_lang
           for i from LANG_LI
             if src == i
