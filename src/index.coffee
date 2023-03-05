@@ -52,6 +52,8 @@
 
   now_len = now.length
 
+  traned_default = new Set()
+
   for await fp from walk(
     now
     (d)=>
@@ -62,6 +64,7 @@
     pos = rfp.indexOf('/i18n/')
     if pos < 0
       pos = rfp.indexOf('.i18n/')
+
     if ~ pos
       if fp[dir.length+1..] == default_lang+'.yml'
         console.log yellowBright "\n❯ #{dir} translate begin"
@@ -81,9 +84,14 @@
           hook.md ...args
           return
 
-        src = to_from.get(default_lang)
-        if src
-          await tran(src, default_lang)
+        key = workdir+file.slice(0,-3)
+
+        if not traned_default.has key
+          src = to_from.get(default_lang)
+          if src
+            await tran(src, default_lang)
+          traned_default.add key
+
 
         if lang == default_lang
           for i from LANG_LI
