@@ -113,7 +113,9 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       """\
       import {ver,posId} from "./var.js"
       import i18n from "../../_/i18n.js"
-      export default i18n.#{pkg}(ver, posId)
+      const [I18N,onMount] = i18n.#{pkg}(ver, posId)
+      export I18N;
+      export default onMount;
       """
     )
 
