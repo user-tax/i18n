@@ -52,8 +52,6 @@
 
   now_len = now.length
 
-  traned_default = new Set()
-
   for await fp from walk(
     now
     (d)=>
@@ -65,46 +63,57 @@
     if pos < 0
       pos = rfp.indexOf('.i18n/')
 
+    default_src = to_from.get(default_lang) or default_lang
+
     if ~ pos
-      if fp[dir.length+1..] == default_lang+'.yml'
+      if fp[dir.length+1..] == default_src+'.yml'
         console.log yellowBright "\n❯ #{dir} translate begin"
         await translateYmlDir dir, to_from, default_lang
         await hook.yml dir, default_lang
         console.log gray "❯ #{dir} translated\n"
       else if fp.endsWith('.md')
-        pos += 6
-        root = now + rfp.slice(0,pos)
-        file = basename(rfp)
-        lang = basename(dirname(rfp))
-        workdir = rfp.slice(pos,rfp.length-lang.length-file.length-1)
+        lang = basename(dirname(fp))
+        if lang == default_src
+          pos += 6
+          root = now + rfp.slice(0,pos)
+          file = basename(rfp)
+          workdir = rfp.slice(pos,rfp.length-lang.length-file.length-1)
 
-        tran = (src, to)=>
-          args = [root, workdir, file, src, to]
-          await translateMd ...args
-          hook.md ...args
-          return
+          tran = (src, to)=>
+            args = [root, workdir, file, src, to]
+            await translateMd ...args
+            return
 
-        key = workdir+file.slice(0,-3)
+          if default_src != default_lang
+            await tran(default_src, default_lang)
 
-        if not traned_default.has key
-          src = to_from.get(default_lang)
-          if src
-            await tran(src, default_lang)
-          traned_default.add key
-
-        if lang == default_lang
           for i from LANG_LI
-            if src == i
-              continue
-            if not to_lang.has i
-              await tran(lang, i)
-        else
-          li = from_to.get lang
-          if li
-            for i from li
-              if i == default_lang
-                continue
-              await tran(lang, i)
+            if i != default_lang and i!=default_src
+              if i == 'zh-TW'
+                src = 'zh'
+              else
+                src = to_from.get(i) or default_lang
+              await tran(src,i)
+
+          hook.md(
+            root
+            workdir
+            file
+          )
+
+        # if lang == default_lang
+        #   for i from LANG_LI
+        #     if src == i
+        #       continue
+        #     if not to_lang.has i
+        #       await tran(lang, i)
+        # else
+        #   li = from_to.get lang
+        #   if li
+        #     for i from li
+        #       if i == default_lang
+        #         continue
+        #       await tran(lang, i)
 
   return
 
