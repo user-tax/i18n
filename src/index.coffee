@@ -99,6 +99,7 @@
             root
             workdir
             file
+            LANG_LI
           )
 
         # if lang == default_lang
