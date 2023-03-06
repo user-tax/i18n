@@ -7,4 +7,4 @@ set -ex
 ./build.sh
 cd test
 ../lib/bin/i18n.js
-../lib/bin/i18n_bin.js i18n js bin
+#../lib/bin/i18n_bin.js i18n js bin

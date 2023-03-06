@@ -5,3 +5,10 @@
 Aquest codi de verificació caducarà d'aquí a una hora.
 
 Si no heu sol·licitat, ignoreu aquest correu electrònic.
+
+```ini
+zzz
+xx
+action
+br
+```

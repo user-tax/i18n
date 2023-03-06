@@ -128,11 +128,18 @@ md_html_li = (md)=>
         strikethrough: true
     }
   )
-
   html = html.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g
     (_,text,link)=>
       """<a href="#{encode link}">#{text}</a>"""
+  )
+
+  pre_code = []
+  html = html.replace(
+    /\<pre\>\<code[^<]+\<\/code\>\<\/pre\>/g
+    (s)=>
+      pre_code.push s
+      "<img #{pre_code.length-1}>"
   )
 
   pli = html.split('</p>')
@@ -142,10 +149,10 @@ md_html_li = (md)=>
     li.push i+'</p>'
   li.push t
 
-  [pre, li, md]
+  [pre, li, md, pre_code]
 
 tran = (dir, file, md, to, from_lang)=>
-  [pre,li] = await md_html_li md
+  [pre,li,_,pre_code] = await md_html_li md
 
   hashli = li.map (i)=>
     blake3Hash utf8e i
@@ -160,6 +167,7 @@ tran = (dir, file, md, to, from_lang)=>
   ili = []
   pli = []
   out = []
+
   n = li.length
   for i,p in li
     if i.trim()
@@ -178,7 +186,7 @@ tran = (dir, file, md, to, from_lang)=>
   out_fp = dir+to+'/'+file
   if n == 0
     if existsSync out_fp
-      [_pre,_li,_md] = await md_html_li read out_fp
+      [_pre,_li,_md, _pre_code] = await md_html_li read out_fp
       if _li.length == li.length
         + change
 
@@ -196,9 +204,17 @@ tran = (dir, file, md, to, from_lang)=>
             cache_fp
             cache.dump()
           )
-        if _pre != pre
-          write(out_fp,pre+_md)
-        return
+        + w
+        if _pre_code.length != pre_code
+          w = 1
+        else if _pre != pre
+          w = 1
+        else
+          for i,p in _pre_code
+            if i!=pre_code[p]
+              w = 1
+        if not w
+          return
 
   console.log from_lang,'→',out_fp
   n = 0
@@ -206,7 +222,11 @@ tran = (dir, file, md, to, from_lang)=>
     p = pli[n++]
     out[p] = i
 
-  html = out.join('')
+  html = out.join('').replace(
+    /<img (\d+)>/
+    (_, d)=>
+      pre_code[d-0]
+  )
   # TODO: 翻译注释，先不搞，以后再说
   #txt = await translate_comment(
   #  txt

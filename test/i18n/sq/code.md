@@ -5,3 +5,10 @@
 Ky kod verifikimi do të skadojë brenda një ore.
 
 Nëse nuk keni aplikuar, ju lutemi injoroni këtë email.
+
+```ini
+zzz
+xx
+action
+br
+```
