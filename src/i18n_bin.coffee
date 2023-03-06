@@ -114,7 +114,8 @@ export default (dir, js_dir, bin_dir, default_lang='en')=>
       import {ver,posId} from "./var.js"
       import i18n from "../../_/i18n.js"
       import CDN from "../../_/CDN.js"
-      const r = i18n.#{pkg}(CDN, ver, posId)
+      import lang from "../../_/lang.js"
+      const r = i18n.#{pkg}(ver, posId,()=>CDN()+pkg+'/'+ver+'/'+lang())
       export const I18N = r[0];
       export default r[1];
       """
