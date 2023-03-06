@@ -205,14 +205,15 @@ tran = (dir, file, md, to, from_lang)=>
             cache.dump()
           )
         + w
-        if _pre_code.length != pre_code
+        if _pre != pre
           w = 1
-        else if _pre != pre
+        else if _pre_code.length != pre_code.length
           w = 1
         else
           for i,p in _pre_code
             if i!=pre_code[p]
               w = 1
+              break
         if not w
           return
 
@@ -223,7 +224,7 @@ tran = (dir, file, md, to, from_lang)=>
     out[p] = i
 
   html = out.join('').replace(
-    /<img (\d+)>/
+    /<img (\d+)>/g
     (_, d)=>
       pre_code[d-0]
   )
