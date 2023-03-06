@@ -52,6 +52,8 @@
 
   now_len = now.length
 
+  default_src = to_from.get(default_lang) or default_lang
+
   for await fp from walk(
     now
     (d)=>
@@ -63,7 +65,11 @@
     if pos < 0
       pos = rfp.indexOf('.i18n/')
 
-    default_src = to_from.get(default_lang) or default_lang
+    if pos < 0
+      if rfp.startsWith '/'+default_src+'/'
+        pos = 1
+    else
+      pos += 6
 
     if ~ pos
       if fp[dir.length+1..] == default_src+'.yml'
@@ -74,7 +80,6 @@
       else if fp.endsWith('.md')
         lang = basename(dirname(fp))
         if lang == default_src
-          pos += 6
           root = now + rfp.slice(0,pos)
           file = basename(rfp)
           workdir = rfp.slice(pos,rfp.length-lang.length-file.length-1)
