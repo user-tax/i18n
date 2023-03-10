@@ -76,7 +76,7 @@
     else if fp.endsWith('.md')
       lang_fp = '/'+default_src+'/'
       pos = rfp.indexOf lang_fp
-      if pos > 0
+      if ~ pos
         workdir = now + rfp.slice(0, pos+1)
         file = rfp.slice(pos+lang_fp.length)
         tran = (src, to)=>
