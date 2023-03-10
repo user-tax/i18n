@@ -5,7 +5,7 @@
   ./defrag.js
   ./tran.js > tranHtml
   @u7/u8 > u8merge
-  @u7/utf8/utf8e
+  @u7/utf8/utf8e.js
   @u7/sleep
   @u7/wasm-set > BinSet
   @u7/write
