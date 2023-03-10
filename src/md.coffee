@@ -259,17 +259,17 @@ tran = (dir, file, md, to, from_lang)=>
   )
   return
 
-< translateMd = (root,dir,file,src,to)=>
-  workdir = root+dir+src
+< translateMd = (dir,file,src,to)=>
+  workdir = dir+src
   fp = workdir+'/'+file
   md = read fp
 
   if to == 'zh-TW' and src == 'zh'
     write(
-      root+dir+to+'/'+file
+      dir+to+'/'+file
       j2f md
     )
   else
-    await tran root+dir,file,md,to,src
+    await tran dir,file,md,to,src
 
   return
