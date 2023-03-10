@@ -2,7 +2,7 @@
   @u7/snake
   @u7/uridir
   @u7/write
-  @u7/utf8/utf8e
+  @u7/utf8/utf8e.js
   @u7/u8 > u8merge
   @u7/yml/Yml.js
   radix-64:Radia64

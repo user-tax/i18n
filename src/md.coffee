@@ -7,8 +7,8 @@
   @u7/blake3 > blake3Hash
   @u7/read
   @u7/u8 > u8eq
-  @u7/utf8/utf8e
-  @u7/utf8/utf8d
+  @u7/utf8/utf8e.js
+  @u7/utf8/utf8d.js
   @u7/write
   assert > strict:assert
   cmark-gfm:cmark
