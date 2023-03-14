@@ -2,7 +2,7 @@
 
 > ./j2f.js
   ./defrag.js
-  ./tran.js > tranHtml
+  @u7/tran > tranHtml
   @u7/binmap > BinMap
   @u7/blake3 > blake3Hash
   @u7/read
@@ -11,11 +11,10 @@
   @u7/utf8/utf8d.js
   @u7/write
   assert > strict:assert
-  cmark-gfm:cmark
   fs > existsSync readFileSync
-  html-entities > encode
+  @u7/htm2md
+  @u7/md2htm
   path > join
-  turndown:TurndownService
 
 C_STYLE_COMMENT = /\/\*[\s\S]*?\*\/|([^:\/\/])\/\/.*$/gm
 
@@ -56,6 +55,7 @@ comment = {
 }
 
 
+# TODO
 translate_comment = (markdown, translate)=>
   li = markdown.split("\n")
 
@@ -80,36 +80,6 @@ translate_comment = (markdown, translate)=>
         code_li.push(line)
   return out.join("\n")
 
-TurndownService.prototype.escape = (txt)=>txt
-
-turndownService = new TurndownService {
-  headingStyle:"atx"
-  hr: '---'
-  codeBlockStyle: "fenced"
-}
-
-turndownService.addRule 'br',
-  filter:'br'
-  replacement: (content, node, options) ->
-    li = ['<br']
-    for i from node.attributes
-      li.push ' '+i.localName
-    li.join('')+'>'
-
-turndownService.addRule 'listItem',
-  filter: 'li'
-  replacement: (content, node, options) ->
-    content = content.replace(/^\n+/, '').replace(/\n+$/, '\n').replace(/\n/gm, '\n  ')
-    # indent
-    prefix = options.bulletListMarker + ' '
-    parent = node.parentNode
-    if parent.nodeName == 'OL'
-      start = parent.getAttribute('start')
-      index = Array::indexOf.call(parent.children, node)
-      prefix = (if start then Number(start) + index else index + 1) + '. '
-    prefix + content + (if node.nextSibling and !/\n$/.test(content) then '\n' else '')
-
-
 md_html_li = (md)=>
   pre = ""
   if md.startsWith("---\n")
@@ -119,21 +89,7 @@ md_html_li = (md)=>
       pre = md[..end]
       md = md[end+1..]
 
-  html = await cmark.renderHtml(
-    md
-    {
-      hardbreaks:true
-      liberalHtmltag: true
-      unsafe: true
-      extensions:
-        strikethrough: true
-    }
-  )
-  html = html.replace(
-    /\[([^\]]+)\]\(([^)]+)\)/g
-    (_,text,link)=>
-      """<a href="#{encode link}">#{text}</a>"""
-  )
+  html = await md2htm md
 
   pre_code = []
   html = html.replace(
@@ -151,6 +107,7 @@ md_html_li = (md)=>
   li.push t
 
   [pre, li, md, pre_code]
+
 
 tran = (dir, file, md, to, from_lang)=>
   [pre,li,_,pre_code] = await md_html_li md
@@ -239,7 +196,7 @@ tran = (dir, file, md, to, from_lang)=>
   #    deepl.txt(t,target_lang)
   #)
   out_txt = pre+defrag(
-    to, turndownService.turndown(html), md
+    to, htm2md(html), md
   )
 
   write(

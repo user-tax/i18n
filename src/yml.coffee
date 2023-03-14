@@ -3,7 +3,7 @@
 > ./j2f.js
   ./LANG_LI.js
   ./defrag.js
-  ./tran.js > tranHtml
+  @u7/tran > tranHtml
   @u7/u8 > u8merge
   @u7/utf8/utf8e.js
   @u7/sleep
